@@ -1,0 +1,10 @@
+.Rproj.user/
+Data/
+Raw Data/
+rsconnect/
+Deploy Code/
+.Rhistory
+.Rdata
+*.docx
+*.xlsx
+Importer/

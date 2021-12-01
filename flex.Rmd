@@ -1,0 +1,678 @@
+---
+title: "Energy Consumption in the UK"
+output: 
+  flexdashboard::flex_dashboard:
+    logo: logo.jpg
+    css: styles.css
+    orientation: rows
+runtime: shiny
+---
+
+<style>                     
+.navbar {
+  background-color:white;
+  border-color:white;
+}
+
+.navbar-nav {
+  background-color: grey;
+  border-color: black;
+}
+
+.navbar-brand {
+color:black!important;
+}
+</style>
+
+
+```{r setup, include=FALSE}
+library(flexdashboard)
+library(shiny)
+library(dygraphs)
+library(shinydashboard)
+library(plotly)
+library(httr)
+library(readr)
+library(scales)
+# library(plyr)
+library(tidyverse)
+library(dplyr)
+library(tidyr)
+library(DT)
+library(readr)
+library(stringi)
+require(rappdirs)
+```
+
+
+```{r load_data, include=FALSE}
+# Load datasets from folders
+d1 <- read.csv("CONSUMPTION DATA.csv", header = TRUE, sep = ",") #%>% 
+  # mutate("Year" = as.numeric(`ï..Year`)) %>%
+  # select(-'ï..Year')
+
+
+int1 <- read.csv("INTENSITY DATA.csv", header = TRUE, sep = ",") #%>% 
+  # mutate("Year" = as.numeric(`ï..Year`)) %>%
+  # select(-'ï..Year')
+
+```
+
+```{r setup2, include = FALSE}
+
+# d1 - HIGH LEVEL SECTORS
+
+## Identify first and last data year
+first_year <- min(int1$Year)
+last_year <- max(int1$Year)
+
+
+## LOOKUP FOR GETTING OPTIONS TO BE USED IN THE DROP DOWN MENUS
+  
+mastervars1 <- as.data.frame(table(d1$Sector))[,1]
+mastervars2 <- as.data.frame(table(d1$Fuel))[,1]
+```
+
+
+```{r add_colours}
+
+#Fuel colors
+FuelColour <- c("#548235", "#C55A11", "#FF9900", "#7030A0", "#843C0C", "#5B9BD5", "#7F7F7F")
+Fuel <- c("Bioenergy & waste", "Coal", "Electricity", "Heat", "Manufactured fuel", "Natural gas", "Petroleum")
+fuel_colors_df <- data_frame(Fuel, FuelColour)
+
+#Sector colors
+SectorColour <- c("#548235", "#C55A11", "#FF9900", "#7030A0", "#5B9BD5", "#7F7F7F")
+Sector <- c("Agriculture", "Commercial", "Domestic", "Industry","Public Administration", "Transport") 
+sector_colors_df <- data_frame(Sector, SectorColour)
+
+
+#Add fuel and sector colors to consumption dataset
+d1 <- d1 %>% 
+  left_join(sector_colors_df, by = c("Sector" = "Sector")) %>% 
+  left_join(fuel_colors_df, by = c("Fuel" = "Fuel"))
+
+#Add sector colors to the intensity dataset
+int1 <- int1 %>% 
+  left_join(sector_colors_df, by = c("Sector" = "Sector"))
+
+```
+
+
+Introduction
+=======================================================================
+Column {.bgwhite}
+----------------------------------------------------------
+#### Energy Consumption in the UK (ECUK)
+
+ECUK is an annual National Statistics publication by BEIS. It contains information on the consumption of energy types by sector to provide a comprehensive view of energy use in the UK. The full publication can be found here https://www.gov.uk/government/statistics/energy-consumption-in-the-uk.
+
+This interactive dashboard allows you to explore selected data on consumption by fuel and sector and data on intensity from ECUK through interactive charts and menus.
+
+This application is a beta release. As such, it's functionality is under development and will be improved and added to over time. Any feedback is gratefully received at: energy.stats@beis.gov.uk 
+
+Please note, the dashboard may not necessarily work as well on mobile devices.
+
+##### Instructions
+
+There are three ways to view the data which are presented in three tabs shown in the blue banner:  
+
+-	By Fuel - shows energy consumption by fuel for the selected sector
+-	By Sector - shows energy consumption by sector for the selected fuel
+- Intensity by Sector - shows energy intensity by sector
+
+Once you have selected a tab, you can interact with the data through the drop down menus and select boxes which will filter the data. The charts will update based on your selection. Hovering over the charts will highlight individual values. Further tools are available on the top right of each chart which allow you to zoom on an area of interest and export the charts as .png files. The charts can be reset by double clicking in them. The underlying data based on your selections can be downloaded by the Download Data button in the bottom left which will generate a .csv file. Note that all years of data will be included but the sectors and fuels are defined by your selections.
+
+We welcome feedback which should be sent to the following email address: energy.stats@beis.gov.uk 
+
+##### Definitions
+
+Energy intensity - the amount of energy required to produce one unit of output. A reduction in intensity could imply an improvement in energy efficiency.
+
+Energy output - the amount of economic output achieved from consuming one unit of energy.
+
+All content is available under the Open Government Licence v3.0, except where otherwise stated. Crown Copyright
+
+![](BEIS.jpg)
+
+By Fuel
+=======================================================================
+Row {data-height=500}
+-------------------------------------------------------
+### Consumption Share
+
+```{r wrangle_byfuel}
+
+#Filter data on sector unless all
+filter_consumption_fuel <- reactive({
+  sector_selected <- input$sectorselect
+  if(sector_selected != "All"){
+    df <- filter(d1, Sector == sector_selected)
+  } 
+  else {df <- d1}
+  
+  df <-  arrange(df, `Sector`) %>% 
+    mutate("Sector" = as.character(`Sector`), "Fuel" = as.character(`Fuel`)) %>% 
+    filter(Fuel %in% selected_fuels()) %>% #filters using checkboxes in the sidebar
+    group_by(`Fuel`, `Year`) %>% 
+    summarise(`Fuel consumption` = sum(`Consumption`, na.rm = TRUE)) %>% #annual consumption for each fuel across all sectors
+    mutate(`Change consumption` = `Fuel consumption` - lag(`Fuel consumption`, k = 1)) %>% 
+    ungroup() %>% 
+    left_join(fuel_colors_df, by = c("Fuel" = "Fuel")) %>% 
+    arrange(`Fuel`)
+  return(df)
+})
+
+#Check there is data in the time series dataframe
+data_to_plot_timeseries_fuel <- reactive({
+  if(nrow(filter_consumption_fuel()) > 0) 
+  {dtp <- TRUE}
+  else
+  {dtp <- FALSE}
+  return(dtp)
+})
+
+
+#Remove the fuel colour column for the data download
+filter_consumption_fuel_download <- reactive({
+  df <- filter_consumption_fuel() %>% 
+    select(-FuelColour)
+  return(df)
+})
+
+
+#Filter on a specific year for pie chart and year on year change
+fuel_consumption_year <- reactive({
+  year_selected <- input$yearselect
+  df <- filter(filter_consumption_fuel(), Year == year_selected)
+  return(df)
+})
+
+#Check there is data in the single year dataframe
+data_to_plot_year_fuel <- reactive({
+  if(nrow(fuel_consumption_year()) > 0) 
+  {dtp <- TRUE}
+  else
+  {dtp <- FALSE}
+  return(dtp)
+})
+
+```
+
+
+```{r plot_byfuel_pie}
+#Plot pie chart
+
+
+renderPlotly({
+  if(data_to_plot_year_fuel())
+  {  
+    
+        plt <- plot_ly() %>% 
+          add_trace(data = fuel_consumption_year(), labels = ~`Fuel`, values = ~`Fuel consumption`, type = 'pie', marker = list(colors = ~`FuelColour`), showlegend = FALSE, hovertemplate = '%{label}: <br>%{value:.1f} ktoe</br>%{percent}', textinfo='label+percent') %>%
+          layout(title = paste(input$sectorselect,", ", input$yearselect, sep=""),
+           xaxis = list(showgrid = FALSE, zeroline = FALSE, showticklabels = TRUE),
+           yaxis = list(showgrid = FALSE, zeroline = FALSE, showticklabels = TRUE), margin = list(l=0, r = 0, t=0, b=100))
+    plt
+  }
+  else
+  {
+        plt <- plot_ly() %>%
+          layout(annotations = list(text = "NO DATA SELECTED",  x = 30, y = 30, showarrow=FALSE ),
+           xaxis = list(visible = FALSE, showgrid = FALSE, zeroline = FALSE, showticklabels = TRUE),
+           yaxis = list(visible = FALSE, showgrid = FALSE, zeroline = FALSE, showticklabels = TRUE), margin = list(l=0, r = 0, t=0, b=100))
+        plt
+    
+  }
+  
+      })
+```
+
+### Year on Year Change
+
+```{r plot_byfuel_yearonyear}
+
+## Plots a chart for year on year change for selected year and selected year -1
+
+
+renderPlotly({
+
+  #layout options
+  x_axis_template <- list(title = "ktoe")
+  y_axis_template <- list(showticklabels = TRUE, title = "", hoverformat = '.1f', 
+                          categoryorder = "category descending")
+  chart_title = paste(input$sectorselect,", ", as.numeric(input$yearselect)-1,"-",input$yearselect, sep = "")
+
+  #Check there is data to plot and the change is not NA< i.e. year selected is first year
+  if(data_to_plot_year_fuel() && input$yearselect > first_year)
+  {  
+    plt <- plot_ly() %>%
+      add_trace(data = fuel_consumption_year(), x = ~`Change consumption`, y = ~`Fuel`, type = 'bar', orientation = 'h', name = ~Fuel, marker = list(color = ~FuelColour), hovertemplate = '%{x:.1f}') %>%
+      layout(title = chart_title, xaxis = x_axis_template, yaxis = y_axis_template, showlegend = FALSE)
+      plt
+      
+  }
+  else
+  {
+        plt <- plot_ly() %>%
+          layout(annotations = list(text = "NO DATA SELECTED",  x = 30, y = 30, showarrow=FALSE ),
+           xaxis = list(visible = FALSE, showgrid = FALSE, zeroline = FALSE, showticklabels = TRUE),
+           yaxis = list(visible = FALSE, showgrid = FALSE, zeroline = FALSE, showticklabels = TRUE), margin = list(l=0, r = 0, t=0, b=100))
+        plt
+    
+  }
+})
+
+```
+
+Row {data-height=500}
+-------------------------------------------------------
+
+### Consumption Time Series
+
+```{r plot_byfuel_timeseries}
+
+#Plot of annual consumption by sector
+renderPlotly({
+  
+  if(data_to_plot_timeseries_fuel())
+  #layout options
+  {
+    chart_title = paste(input$sectorselect,", ",'Consumption by Fuel', sep="")
+    x_axis_template = list(title = "Year", showgrid = F, tickformat = 'd')
+    y_axis_template = list(title = "Consumption (Ktoe)", showgrid = F, tickformat = ',d', 
+                           hoverformat = ',2f')
+    
+    plt <- plot_ly() %>%
+      add_trace(data = filter_consumption_fuel(), x = ~Year, y = ~`Fuel consumption`, type = 'scatter', mode = 'lines', line = list(color = ~FuelColour, width = 2), split= ~Fuel, hovertemplate = '%{y:.1f}') %>%
+      layout(xaxis = x_axis_template, yaxis = y_axis_template, title = chart_title)
+    plt
+  }
+  else
+  {
+   plt <- plot_ly() %>%
+          layout(annotations = list(text = "NO DATA SELECTED",  x = 30, y = 30, showarrow=FALSE ),
+           xaxis = list(visible = FALSE, showgrid = FALSE, zeroline = FALSE, showticklabels = TRUE),
+           yaxis = list(visible = FALSE, showgrid = FALSE, zeroline = FALSE, showticklabels = TRUE), margin = list(l=0, r = 0, t=0, b=100))
+  plt
+     
+  }
+  
+  
+})
+```
+
+Column {.sidebar}
+-----------------------------------------------------------------------
+
+Select sector:
+```{r}
+selectInput("sectorselect", label = "",
+            choices = c("All",paste(mastervars1)))
+```
+
+Select year:
+```{r}
+selectInput("yearselect", label = "",
+            choices = c(first_year:last_year), selected = last_year)
+```
+
+Select fuels to include:
+```{r fuels_checkboxes}
+checkboxInput("BioCheck", label = "Bioenergy & waste", value = TRUE)
+checkboxInput("CoalCheck", label = "Coal", value = TRUE)
+checkboxInput("ElecCheck", label = "Electricity", value = TRUE)
+checkboxInput("HeatCheck", label = "Heat Sold", value = TRUE)
+checkboxInput("ManuCheck", label = "Manufactured fuel", value = TRUE)
+checkboxInput("NaturalCheck", label = "Natural gas", value = TRUE)
+checkboxInput("PetrolCheck", label = "Petroleum Products", value = TRUE)
+
+```
+
+
+```{r filter_fuels}
+
+#Get a list of the selected fuels for filtering the data
+selected_fuels <- reactive({
+  vec <- vector()
+  if(input$BioCheck)
+    {vec <- c(vec, "Bioenergy & waste")}
+  if(input$CoalCheck) 
+    {vec <- c(vec, "Coal")}
+  if(input$ElecCheck) 
+    {vec <- c(vec, "Electricity")}
+  if(input$HeatCheck) 
+    {vec <- c(vec, "Heat")}
+  if(input$ManuCheck) 
+    {vec <- c(vec, "Manufactured fuel")}
+  if(input$NaturalCheck)
+    {vec <- c(vec, "Natural gas")}
+  if(input$PetrolCheck)
+    {vec <- c(vec, "Petroleum")}
+  return(vec)
+})
+
+
+```
+
+Download data:
+```{r download_data_fuel}
+
+#Use the filtered data set for the download
+downloadButton('flextable','Download Dataset')
+
+downloadHandler(filename = function() {
+   paste('data',Sys.Date(),'.csv',sep='')
+   }
+    ,
+    content = function(file) {
+      write.csv(filter_consumption_fuel_download(), file, row.names = FALSE)
+    }
+  )
+```
+
+By Sector
+=======================================================================
+Row {data-height=500}
+-------------------------------------------------------
+### Consumption Share
+
+```{r wrangle_bysector}
+
+#Filter data on sector unless all
+filter_consumption_sector <- reactive({
+  fuel_selected <- input$fuelselect
+  if(fuel_selected != "All"){
+    df <- filter(d1, Fuel == fuel_selected)
+  } 
+  else {df <- d1}
+  
+  df <-  arrange(df, `Sector`) %>% 
+    mutate("Sector" = as.character(`Sector`), "Fuel" = as.character(`Fuel`)) %>% 
+    filter(`Sector` %in% selected_sectors()) %>% #filters using checkboxes in the sidebar
+    group_by(`Sector`, `Year`) %>% 
+    summarise(`Sector consumption` = sum(`Consumption`, na.rm = TRUE)) %>% #annual consumption for each fuel across all sectors
+    mutate(`Change consumption` = `Sector consumption` - lag(`Sector consumption`, k = 1)) %>% 
+    ungroup() %>% 
+    left_join(sector_colors_df, by = c("Sector" = "Sector")) %>% 
+    arrange(`Sector`)
+  return(df)
+})
+
+#Check there is data in the time series dataframe
+data_to_plot_timeseries_sector <- reactive({
+  if(nrow(filter_consumption_sector()) > 0) 
+  {dtp <- TRUE}
+  else
+  {dtp <- FALSE}
+  return(dtp)
+})
+
+#Filter on a specific year for pie chart and year on year change
+sector_consumption_year <- reactive({
+  year_selected <- input$yearselect2
+  df <- filter(filter_consumption_sector(), Year == year_selected) %>% 
+    mutate(`Sector` = as.factor(`Sector`))
+  return(df)
+})
+
+#Check there is data in the single year dataframe
+data_to_plot_year_sector <- reactive({
+  if(nrow(sector_consumption_year()) > 0) 
+  {dtp <- TRUE}
+  else
+  {dtp <- FALSE}
+  return(dtp)
+})
+
+
+filter_consumption_sector_download <- reactive({
+  df <- filter_consumption_sector() %>% 
+    select(-SectorColour)
+  return(df)
+})
+
+```
+
+```{r plot_bysector_pie}
+#Plot pie chart
+renderPlotly({
+  if(data_to_plot_year_sector())
+  {
+    x_axis_template = list(showgrid = FALSE, zeroline = FALSE, showticklabels = TRUE)
+    y_axis_template = list(showgrid = FALSE, zeroline = FALSE, showticklabels = TRUE)
+    
+    plt <- plot_ly() %>% 
+      add_trace(data = sector_consumption_year(), labels = ~Sector, values = ~`Sector consumption`, type = 'pie',
+               marker = list(colors = ~SectorColour),
+               showlegend = FALSE, hovertemplate = '%{label}: <br>%{value:.1f} ktoe</br>%{percent}', sort = "FALSE", textinfo='label+percent') %>%
+      layout(xaxis = x_axis_template, yaxis = y_axis_template, title = paste(input$fuelselect,", ", input$yearselect2, sep=""), margin = list(l=0, r = 0, t=0, b=100))
+    plt
+  }
+  else
+  {
+    plt <- plot_ly() %>%
+      layout(annotations = list(text = "NO DATA SELECTED",  x = 30, y = 30, showarrow=FALSE ),
+       xaxis = list(visible = FALSE, showgrid = FALSE, zeroline = FALSE, showticklabels = TRUE),
+       yaxis = list(visible = FALSE, showgrid = FALSE, zeroline = FALSE, showticklabels = TRUE), margin = list(l=0, r = 0, t=0, b=100))
+        plt
+    
+  }
+})
+
+```
+
+### Year on Year Change
+
+```{r plot_bysector_yearonyear}
+
+## Plots a chart for year on year change for selected year and selected year -1
+
+## Plot year on year change - Checking there is data to plot and that the change is not NA, i.e. year 2000 selected
+renderPlotly({
+  if(data_to_plot_year_sector() && input$yearselect2 > first_year)
+  {
+    #layout options
+    x_axis_template <- list(title = "ktoe")
+    y_axis_template <- list(showticklabels = TRUE, title = "", hoverformat = '.1f', 
+                            categoryorder = "category descending")
+    chart_title = paste(input$fuelselect,", ", as.numeric(input$yearselect2)-1,"-",input$yearselect2, sep = "")
+    
+    plt <- plot_ly() %>% 
+      add_trace(data = sector_consumption_year(), x = ~`Change consumption`, y = ~Sector, type = 'bar', orientation = 'h', name = ~Sector, marker = list(color = ~SectorColour), hovertemplate = '%{x:.1f}') %>%
+      layout(title = chart_title, xaxis = x_axis_template, yaxis = y_axis_template, showlegend = FALSE)
+      plt
+  }
+  else
+  {
+        plt <- plot_ly() %>%
+          layout(annotations = list(text = "NO DATA SELECTED",  x = 30, y = 30, showarrow=FALSE ),
+           xaxis = list(visible = FALSE, showgrid = FALSE, zeroline = FALSE, showticklabels = TRUE),
+           yaxis = list(visible = FALSE, showgrid = FALSE, zeroline = FALSE, showticklabels = TRUE), margin = list(l=0, r = 0, t=0, b=100))
+        plt
+    
+  }
+})
+
+
+```
+
+Row {data-height=500}
+-------------------------------------------------------
+
+### Consumption Time Series
+
+```{r plot_bysector_timeseries}
+
+#Plot of annual consumption by sector
+renderPlotly({
+  if(data_to_plot_timeseries_sector())
+  {
+    #layout options
+    chart_title = paste(input$fuelselect,", ",'Consumption by Sector', sep="")
+    x_axis_template = list(title = "Year", showgrid = F, tickformat = 'd')
+    y_axis_template = list(title = "Consumption (ktoe)", showgrid = F, tickformat = ',d', hoverformat = ',2f')
+    
+    #Plot using dataframe with fuel selection
+    plt <- plot_ly() %>% 
+      add_trace(data = filter_consumption_sector(), x = ~Year, y = ~`Sector consumption`, type = 'scatter', mode = 'lines', line = list(color = ~SectorColour, width = 2), split= ~Sector, hovertemplate = '%{y:.1f}') %>% 
+      layout(xaxis = x_axis_template, yaxis = y_axis_template, title = chart_title)
+    plt
+  }
+  else
+  {
+   plt <- plot_ly() %>%
+          layout(annotations = list(text = "NO DATA SELECTED",  x = 30, y = 30, showarrow=FALSE ),
+           xaxis = list(visible = FALSE, showgrid = FALSE, zeroline = FALSE, showticklabels = TRUE),
+           yaxis = list(visible = FALSE, showgrid = FALSE, zeroline = FALSE, showticklabels = TRUE), margin = list(l=0, r = 0, t=0, b=100))
+  plt
+     
+  }
+
+})
+
+```
+
+
+Column {.sidebar}
+-----------------------------------------------------------------------
+
+Select fuel:
+```{r select_fuel}
+selectInput("fuelselect", label = "",
+            choices = c("All", paste(mastervars2)))
+```
+
+Select year:
+```{r select_year}
+selectInput("yearselect2", label = "",
+            choices = c(first_year:last_year), selected = last_year)
+```
+
+Select sectors to include:
+```{r select_sectors}
+checkboxInput("AgriCheck", label = "Agriculture", value = TRUE)
+checkboxInput("CommCheck", label = "Commercial", value = TRUE)
+checkboxInput("DomCheck", label = "Domestic", value = TRUE)
+checkboxInput("IndCheck", label = "Industry", value = TRUE)
+checkboxInput("PubAdCheck", label = "Public administration", value = TRUE)
+checkboxInput("TransCheck", label = "Transport", value = TRUE)
+```
+
+```{r selected_sectors}
+
+#Get a list of the selected sectors for filtering the data
+selected_sectors <- reactive({
+  vec <- vector()
+  if(input$DomCheck)
+    {vec <- c(vec, "Domestic")}
+  if(input$CommCheck)
+    {vec <- c(vec, "Commercial")}
+  if(input$AgriCheck)
+    {vec <- c(vec, "Agriculture")}
+  if(input$IndCheck)
+    {vec <- c(vec, "Industry")}
+  if(input$PubAdCheck)
+    {vec <- c(vec, "Public Administration")}
+  if(input$TransCheck)
+    {vec <- c(vec, "Transport")}
+  return(vec)
+})
+```
+
+
+
+Download data:
+```{r download_data_sector}
+
+
+#Use the filtered data set for the download
+downloadButton('flextable','Download Dataset')
+
+downloadHandler(filename = function() {
+   paste('data',Sys.Date(),'.csv',sep='')
+   }
+    ,
+    content = function(file) {
+      write.csv(filter_consumption_sector_download(), file, row.names = FALSE)
+    }
+  )
+```
+
+
+
+Intensity by Sector
+=======================================================================
+Row {data-height=500}
+-------------------------------------------------------
+### Intensity measures
+  
+```{r plot_intensity}
+
+#Filter the intensity data using the sector selector on the intensity tab
+intensity_data <- reactive({int1 %>% 
+  filter(Sector == input$sectorselect2) %>% 
+  mutate("Base" = 100)
+  })
+  
+renderPlotly({
+  
+  x_axis_template <- list(title = "Year", showgrid = F, tickformat = 'd')
+  y_axis_template <- list(title = "Index (2000 = 100)", showgrid = F, tickformat = ',d'
+                           ,range = c(0,200)
+                           ,hoverformat = '.2f')
+  title_sector = paste(input$sectorselect2, ", ",'Intensity Measures (Indexed 2000)',sep="")
+
+    plt <- plot_ly() %>% 
+    add_trace(data = intensity_data(), x = ~Year, y = ~Index, type = 'scatter', mode = 'lines', name = ~Metric, hovertemplate = '%{y:.2f}') %>% 
+    add_trace(data = intensity_data(), x = ~Year, y = ~Base, type = 'scatter', mode = 'lines',name = "Baseline", fillcolor = "black") %>% 
+    layout(xaxis = x_axis_template, y = y_axis_template, title = title_sector)
+  
+})
+
+```
+
+Column {.sidebar}
+-----------------------------------------------------------------------
+  
+Select sector:
+```{r select_sector_intensity}
+r <- as.data.frame(xtabs(int1$Index ~ int1$Sector, int1))[,1]
+selectInput("sectorselect2", label = "",
+            choices = r)
+```
+
+Download data:
+```{r download_data_intensity}
+
+#Download intensity dataset without any filtering
+downloadButton('flextable2','Download Dataset')
+
+downloadHandler(filename = function() {
+   paste('data',Sys.Date(),'.csv',sep='')
+   }
+    ,
+    content = function(file) {
+      write.csv(int1, file, row.names = FALSE)
+    }
+  )
+
+```
+
+Version history
+=======================================================================
+Row {data-height=500}
+-------------------------------------------------------
+### Version history
+
+```{r read_version_history}
+  mystring <- readLines('VERSION HISTORY.txt')
+  renderTable({
+  version_history_df <- data_frame(mystring) %>% 
+    separate(col = mystring, sep = '\t', into = c("Version", "Change"))
+  version_history_df})
+  
+  
+```
+
+

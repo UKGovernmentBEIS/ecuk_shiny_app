@@ -1,0 +1,886 @@
+﻿Year,Fuel,Consumption,Sector
+2000,Manufactured fuel,0,Commercial
+2001,Manufactured fuel,0,Commercial
+2002,Manufactured fuel,0,Commercial
+2003,Manufactured fuel,0,Commercial
+2004,Manufactured fuel,0,Commercial
+2005,Manufactured fuel,0,Commercial
+2006,Manufactured fuel,0,Commercial
+2007,Manufactured fuel,0,Commercial
+2008,Manufactured fuel,0,Commercial
+2009,Manufactured fuel,0,Commercial
+2010,Manufactured fuel,0,Commercial
+2011,Manufactured fuel,0,Commercial
+2012,Manufactured fuel,0,Commercial
+2013,Manufactured fuel,0,Commercial
+2014,Manufactured fuel,0,Commercial
+2015,Manufactured fuel,0,Commercial
+2016,Manufactured fuel,0,Commercial
+2017,Manufactured fuel,0,Commercial
+2018,Manufactured fuel,0,Commercial
+2019,Manufactured fuel,0,Commercial
+2020,Manufactured fuel,0,Commercial
+2000,Manufactured fuel,0,Agriculture
+2000,Heat,0,Agriculture
+2001,Manufactured fuel,0,Agriculture
+2002,Manufactured fuel,0,Agriculture
+2002,Heat,0,Agriculture
+2003,Manufactured fuel,0,Agriculture
+2003,Heat,0,Agriculture
+2004,Manufactured fuel,0,Agriculture
+2004,Heat,0,Agriculture
+2005,Manufactured fuel,0,Agriculture
+2005,Heat,0,Agriculture
+2006,Manufactured fuel,0,Agriculture
+2006,Heat,0,Agriculture
+2007,Manufactured fuel,0,Agriculture
+2007,Heat,0,Agriculture
+2008,Manufactured fuel,0,Agriculture
+2008,Heat,0,Agriculture
+2009,Coal,0,Agriculture
+2009,Manufactured fuel,0,Agriculture
+2009,Heat,0,Agriculture
+2010,Manufactured fuel,0,Agriculture
+2010,Heat,0,Agriculture
+2011,Manufactured fuel,0,Agriculture
+2011,Heat,0,Agriculture
+2012,Manufactured fuel,0,Agriculture
+2012,Heat,0,Agriculture
+2013,Coal,0,Agriculture
+2013,Manufactured fuel,0,Agriculture
+2013,Heat,0,Agriculture
+2014,Coal,0,Agriculture
+2014,Manufactured fuel,0,Agriculture
+2014,Heat,0,Agriculture
+2015,Coal,0,Agriculture
+2015,Manufactured fuel,0,Agriculture
+2015,Heat,0,Agriculture
+2016,Coal,0,Agriculture
+2016,Manufactured fuel,0,Agriculture
+2016,Heat,0,Agriculture
+2017,Coal,0,Agriculture
+2017,Manufactured fuel,0,Agriculture
+2017,Heat,0,Agriculture
+2018,Coal,0,Agriculture
+2018,Manufactured fuel,0,Agriculture
+2019,Coal,0,Agriculture
+2019,Manufactured fuel,0,Agriculture
+2020,Coal,0,Agriculture
+2020,Manufactured fuel,0,Agriculture
+2000,Manufactured fuel,0,Public Administration
+2001,Manufactured fuel,0,Public Administration
+2002,Manufactured fuel,0,Public Administration
+2003,Manufactured fuel,0,Public Administration
+2004,Manufactured fuel,0,Public Administration
+2005,Manufactured fuel,0,Public Administration
+2006,Manufactured fuel,0,Public Administration
+2007,Manufactured fuel,0,Public Administration
+2008,Manufactured fuel,0,Public Administration
+2009,Manufactured fuel,0,Public Administration
+2010,Manufactured fuel,0,Public Administration
+2011,Manufactured fuel,0,Public Administration
+2012,Manufactured fuel,0,Public Administration
+2013,Manufactured fuel,0,Public Administration
+2014,Manufactured fuel,0,Public Administration
+2015,Manufactured fuel,0,Public Administration
+2016,Manufactured fuel,0,Public Administration
+2017,Manufactured fuel,0,Public Administration
+2018,Manufactured fuel,0,Public Administration
+2019,Manufactured fuel,0,Public Administration
+2020,Manufactured fuel,0,Public Administration
+2015,Manufactured fuel,0,Industry
+2016,Manufactured fuel,0,Industry
+2017,Manufactured fuel,0,Industry
+2018,Manufactured fuel,0,Industry
+2019,Manufactured fuel,0,Industry
+2020,Manufactured fuel,0,Industry
+2000,Coal,0,Transport
+2001,Coal,0,Transport
+2002,Coal,0,Transport
+2003,Coal,0,Transport
+2004,Coal,0,Transport
+2016,Manufactured fuel,0,Transport
+2017,Manufactured fuel,0,Transport
+2018,Manufactured fuel,0,Transport
+2019,Manufactured fuel,0,Transport
+2020,Manufactured fuel,0,Transport
+2017,Manufactured fuel,0,Domestic
+2019,Manufactured fuel,0,Domestic
+2020,Manufactured fuel,0,Domestic
+2000,Electricity,741.44454,Transport
+2000,Petroleum,54719.67235,Transport
+2001,Electricity,759.0713672,Transport
+2001,Petroleum,54378.21008,Transport
+2002,Electricity,726.9374211,Transport
+2002,Petroleum,54957.90848,Transport
+2003,Electricity,706.1405645,Transport
+2003,Petroleum,55659.64694,Transport
+2004,Electricity,348.8919847,Transport
+2004,Petroleum,57025.24922,Transport
+2005,Coal,2.916434106,Transport
+2005,Electricity,349.045428,Transport
+2005,Petroleum,58367.15406,Transport
+2005,Bioenergy & waste,74.05121562,Transport
+2006,Coal,13.7072403,Transport
+2006,Electricity,344.088976,Transport
+2006,Petroleum,58955.85821,Transport
+2006,Bioenergy & waste,187.7920361,Transport
+2007,Coal,13.7072403,Transport
+2007,Electricity,340.6329043,Transport
+2007,Petroleum,59054.8987,Transport
+2007,Bioenergy & waste,361.6905065,Transport
+2008,Coal,13.50892422,Transport
+2008,Electricity,339.9588649,Transport
+2008,Petroleum,56195.33694,Transport
+2008,Bioenergy & waste,844.5071793,Transport
+2009,Coal,13.47587154,Transport
+2009,Electricity,348.3169825,Transport
+2009,Petroleum,53993.23348,Transport
+2009,Bioenergy & waste,1038.489153,Transport
+2010,Coal,13.6056179,Transport
+2010,Electricity,349.7395154,Transport
+2010,Petroleum,53055.02463,Transport
+2010,Bioenergy & waste,1217.569504,Transport
+2011,Coal,11.06647801,Transport
+2011,Electricity,361.5988042,Transport
+2011,Petroleum,52992.94108,Transport
+2011,Bioenergy & waste,1127.524601,Transport
+2012,Coal,11.60428545,Transport
+2012,Electricity,385.2227022,Transport
+2012,Petroleum,52421.8784,Transport
+2012,Bioenergy & waste,957.7624916,Transport
+2013,Coal,9.876506784,Transport
+2013,Electricity,374.2306022,Transport
+2013,Petroleum,52014.02467,Transport
+2013,Bioenergy & waste,1091.583071,Transport
+2014,Coal,9.364016231,Transport
+2014,Electricity,387.3018915,Transport
+2014,Petroleum,52506.48417,Transport
+2014,Bioenergy & waste,1242.667431,Transport
+2015,Coal,9.364016231,Transport
+2015,Electricity,388.3492808,Transport
+2015,Petroleum,53617.12941,Transport
+2015,Bioenergy & waste,997.7930639,Transport
+2016,Coal,10.80463411,Transport
+2016,Electricity,403.2749089,Transport
+2016,Petroleum,54576.90929,Transport
+2016,Bioenergy & waste,1009.544282,Transport
+2017,Coal,10.7669216,Transport
+2017,Electricity,415.586359,Transport
+2017,Petroleum,55579.10334,Transport
+2017,Bioenergy & waste,997.1242954,Transport
+2018,Coal,10.7669216,Transport
+2018,Electricity,428.507928,Transport
+2018,Petroleum,55087.80412,Transport
+2018,Bioenergy & waste,1364.794115,Transport
+2018,Natural gas,9.721783579,Transport
+2019,Coal,10.7669216,Transport
+2019,Electricity,486.2133656,Transport
+2019,Petroleum,54396.44532,Transport
+2019,Bioenergy & waste,1736.053007,Transport
+2019,Natural gas,15.12720297,Transport
+2020,Coal,9.474891011,Transport
+2020,Electricity,431.0976059,Transport
+2020,Petroleum,38355.03403,Transport
+2020,Bioenergy & waste,1638.396095,Transport
+2020,Natural gas,26.9159028,Transport
+2000,Coal,4.883770044,Agriculture
+2000,Natural gas,130.8684437,Agriculture
+2000,Electricity,374.7205503,Agriculture
+2000,Bioenergy & waste,72.15,Agriculture
+2000,Petroleum,633.5896454,Agriculture
+2001,Coal,3.463265501,Agriculture
+2001,Natural gas,200.2579536,Agriculture
+2001,Electricity,352.5365434,Agriculture
+2001,Heat,7.299736887,Agriculture
+2001,Bioenergy & waste,72.15,Agriculture
+2001,Petroleum,650.1341923,Agriculture
+2002,Coal,4.20663871,Agriculture
+2002,Natural gas,201.7000723,Agriculture
+2002,Electricity,347.7757669,Agriculture
+2002,Bioenergy & waste,72.15,Agriculture
+2002,Petroleum,563.013591,Agriculture
+2003,Coal,4.323489867,Agriculture
+2003,Natural gas,199.8337928,Agriculture
+2003,Electricity,344.4031806,Agriculture
+2003,Bioenergy & waste,72.15,Agriculture
+2003,Petroleum,328.345516,Agriculture
+2004,Coal,5.415559976,Agriculture
+2004,Natural gas,202.4590751,Agriculture
+2004,Electricity,347.7171125,Agriculture
+2004,Bioenergy & waste,73.84,Agriculture
+2004,Petroleum,276.5860516,Agriculture
+2005,Coal,6.018916595,Agriculture
+2005,Natural gas,194.4296226,Agriculture
+2005,Electricity,344.0879622,Agriculture
+2005,Bioenergy & waste,80.63484205,Agriculture
+2005,Petroleum,381.6548226,Agriculture
+2006,Coal,3.343842553,Agriculture
+2006,Natural gas,173.096342,Agriculture
+2006,Electricity,344.7013901,Agriculture
+2006,Bioenergy & waste,89.53590607,Agriculture
+2006,Petroleum,305.8307913,Agriculture
+2007,Coal,2.675074042,Agriculture
+2007,Natural gas,171.8346876,Agriculture
+2007,Electricity,348.6550623,Agriculture
+2007,Bioenergy & waste,89.43649881,Agriculture
+2007,Petroleum,294.3735131,Agriculture
+2008,Coal,3.343842553,Agriculture
+2008,Natural gas,121.5190356,Agriculture
+2008,Electricity,349.6868096,Agriculture
+2008,Bioenergy & waste,140.3192393,Agriculture
+2008,Petroleum,299.6255159,Agriculture
+2009,Natural gas,126.2102571,Agriculture
+2009,Electricity,326.7930446,Agriculture
+2009,Bioenergy & waste,129.6519367,Agriculture
+2009,Petroleum,286.0202604,Agriculture
+2010,Coal,0.948406714,Agriculture
+2010,Natural gas,117.6943789,Agriculture
+2010,Electricity,346.3978644,Agriculture
+2010,Bioenergy & waste,187.6480608,Agriculture
+2010,Petroleum,312.7003071,Agriculture
+2011,Coal,1.00891475,Agriculture
+2011,Natural gas,116.1381262,Agriculture
+2011,Electricity,339.4592911,Agriculture
+2011,Bioenergy & waste,157.4295524,Agriculture
+2011,Petroleum,302.8018858,Agriculture
+2012,Coal,1.02047753,Agriculture
+2012,Natural gas,99.93174835,Agriculture
+2012,Electricity,332.8498648,Agriculture
+2012,Bioenergy & waste,183.61305,Agriculture
+2012,Petroleum,362.5734714,Agriculture
+2013,Natural gas,94.28010788,Agriculture
+2013,Electricity,333.1086431,Agriculture
+2013,Bioenergy & waste,302.4132783,Agriculture
+2013,Petroleum,355.6282277,Agriculture
+2014,Natural gas,92.30196797,Agriculture
+2014,Electricity,330.5568313,Agriculture
+2014,Bioenergy & waste,459.1108712,Agriculture
+2014,Petroleum,399.9314479,Agriculture
+2015,Natural gas,84.48192169,Agriculture
+2015,Electricity,353.9893702,Agriculture
+2015,Bioenergy & waste,121.4301795,Agriculture
+2015,Petroleum,473.0088413,Agriculture
+2016,Natural gas,86.82356326,Agriculture
+2016,Electricity,370.5917164,Agriculture
+2016,Bioenergy & waste,117.7126913,Agriculture
+2016,Petroleum,966.883057,Agriculture
+2017,Natural gas,87.98088265,Agriculture
+2017,Electricity,373.8254365,Agriculture
+2017,Bioenergy & waste,130.1340355,Agriculture
+2017,Petroleum,928.3636604,Agriculture
+2018,Natural gas,84.92341336,Agriculture
+2018,Electricity,371.101921,Agriculture
+2018,Heat,2.949258797,Agriculture
+2018,Bioenergy & waste,133.8162856,Agriculture
+2018,Petroleum,890.379379,Agriculture
+2019,Natural gas,89.35486369,Agriculture
+2019,Electricity,361.5934603,Agriculture
+2019,Heat,4.087477142,Agriculture
+2019,Bioenergy & waste,132.4801188,Agriculture
+2019,Petroleum,873.3289709,Agriculture
+2020,Natural gas,87.00582365,Agriculture
+2020,Electricity,346.166932,Agriculture
+2020,Heat,4.072579949,Agriculture
+2020,Bioenergy & waste,130.2302719,Agriculture
+2020,Petroleum,909.8750985,Agriculture
+2000,Coal,41.87560828,Public Administration
+2000,Natural gas,3830.782459,Public Administration
+2000,Electricity,1798.194325,Public Administration
+2000,Heat,1286.672399,Public Administration
+2000,Bioenergy & waste,88.37,Public Administration
+2000,Petroleum,1043.734328,Public Administration
+2001,Coal,33.54867702,Public Administration
+2001,Natural gas,3975.236457,Public Administration
+2001,Electricity,1814.703353,Public Administration
+2001,Heat,1286.672399,Public Administration
+2001,Bioenergy & waste,89.71,Public Administration
+2001,Petroleum,845.4258583,Public Administration
+2002,Coal,5.2386713,Public Administration
+2002,Natural gas,3697.193367,Public Administration
+2002,Electricity,1750.373827,Public Administration
+2002,Heat,730.0085985,Public Administration
+2002,Bioenergy & waste,96.84,Public Administration
+2002,Petroleum,742.7184864,Public Administration
+2003,Coal,7.672469027,Public Administration
+2003,Natural gas,3814.486649,Public Administration
+2003,Electricity,1756.098491,Public Administration
+2003,Heat,627.1711092,Public Administration
+2003,Bioenergy & waste,104.18,Public Administration
+2003,Petroleum,399.1175236,Public Administration
+2004,Coal,9.008563067,Public Administration
+2004,Natural gas,4465.548806,Public Administration
+2004,Electricity,1733.230009,Public Administration
+2004,Heat,368.0995808,Public Administration
+2004,Bioenergy & waste,104.15,Public Administration
+2004,Petroleum,503.8544469,Public Administration
+2005,Coal,26.51149977,Public Administration
+2005,Natural gas,4326.679487,Public Administration
+2005,Electricity,1722.08712,Public Administration
+2005,Heat,375.7769781,Public Administration
+2005,Bioenergy & waste,104.5663274,Public Administration
+2005,Petroleum,542.5559739,Public Administration
+2006,Coal,13.09493397,Public Administration
+2006,Natural gas,3938.338492,Public Administration
+2006,Electricity,1720.741842,Public Administration
+2006,Heat,375.6490211,Public Administration
+2006,Bioenergy & waste,83.20024264,Public Administration
+2006,Petroleum,489.986826,Public Administration
+2007,Coal,9.987684844,Public Administration
+2007,Natural gas,3649.562358,Public Administration
+2007,Electricity,1727.196717,Public Administration
+2007,Heat,383.1086414,Public Administration
+2007,Bioenergy & waste,88.53380621,Public Administration
+2007,Petroleum,487.4935663,Public Administration
+2008,Coal,9.354438689,Public Administration
+2008,Natural gas,3834.805854,Public Administration
+2008,Electricity,1750.209386,Public Administration
+2008,Heat,386.629411,Public Administration
+2008,Bioenergy & waste,74.52516652,Public Administration
+2008,Petroleum,468.2530605,Public Administration
+2009,Coal,16.71228301,Public Administration
+2009,Natural gas,3458.490451,Public Administration
+2009,Electricity,1671.675709,Public Administration
+2009,Heat,382.3842755,Public Administration
+2009,Bioenergy & waste,83.70351647,Public Administration
+2009,Petroleum,372.7551057,Public Administration
+2010,Coal,19.90209961,Public Administration
+2010,Natural gas,3780.998147,Public Administration
+2010,Electricity,1642.313983,Public Administration
+2010,Heat,382.3462188,Public Administration
+2010,Bioenergy & waste,101.4238036,Public Administration
+2010,Petroleum,313.6392278,Public Administration
+2011,Coal,18.15146756,Public Administration
+2011,Natural gas,3065.734182,Public Administration
+2011,Electricity,1581.871395,Public Administration
+2011,Heat,381.6131433,Public Administration
+2011,Bioenergy & waste,93.90610203,Public Administration
+2011,Petroleum,365.7526061,Public Administration
+2012,Coal,8.166842023,Public Administration
+2012,Natural gas,3553.166625,Public Administration
+2012,Electricity,1625.327942,Public Administration
+2012,Heat,391.1337489,Public Administration
+2012,Bioenergy & waste,88.6443767,Public Administration
+2012,Petroleum,321.4094583,Public Administration
+2013,Coal,16.63337528,Public Administration
+2013,Natural gas,3632.903566,Public Administration
+2013,Electricity,1616.716002,Public Administration
+2013,Heat,388.8899828,Public Administration
+2013,Bioenergy & waste,123.9015674,Public Administration
+2013,Petroleum,299.622519,Public Administration
+2014,Coal,17.11069861,Public Administration
+2014,Natural gas,3007.084615,Public Administration
+2014,Electricity,1590.86342,Public Administration
+2014,Heat,469.6600602,Public Administration
+2014,Bioenergy & waste,119.1158977,Public Administration
+2014,Petroleum,334.2251026,Public Administration
+2015,Coal,18.04781718,Public Administration
+2015,Natural gas,3174.886237,Public Administration
+2015,Electricity,1665.647949,Public Administration
+2015,Heat,78.07774148,Public Administration
+2015,Bioenergy & waste,42.40411425,Public Administration
+2015,Petroleum,360.1988763,Public Administration
+2016,Coal,19.8213857,Public Administration
+2016,Natural gas,3221.889606,Public Administration
+2016,Electricity,1694.570778,Public Administration
+2016,Heat,71.24859273,Public Administration
+2016,Bioenergy & waste,27.32381875,Public Administration
+2016,Petroleum,789.3437203,Public Administration
+2017,Coal,18.44069132,Public Administration
+2017,Natural gas,3041.477518,Public Administration
+2017,Electricity,1697.822778,Public Administration
+2017,Heat,77.97792893,Public Administration
+2017,Bioenergy & waste,60.84137476,Public Administration
+2017,Petroleum,706.68414,Public Administration
+2018,Coal,17.92031286,Public Administration
+2018,Natural gas,3067.438134,Public Administration
+2018,Electricity,1569.068182,Public Administration
+2018,Heat,86.01946179,Public Administration
+2018,Bioenergy & waste,38.95988945,Public Administration
+2018,Petroleum,746.6377901,Public Administration
+2019,Coal,13.07212108,Public Administration
+2019,Natural gas,2990.549393,Public Administration
+2019,Electricity,1536.883323,Public Administration
+2019,Heat,78.82532296,Public Administration
+2019,Bioenergy & waste,42.19161437,Public Administration
+2019,Petroleum,713.0959104,Public Administration
+2020,Coal,12.92576029,Public Administration
+2020,Natural gas,2999.38578,Public Administration
+2020,Electricity,1409.960497,Public Administration
+2020,Heat,78.72272048,Public Administration
+2020,Bioenergy & waste,40.13216496,Public Administration
+2020,Petroleum,695.6549657,Public Administration
+2000,Coal,10.39169367,Commercial
+2000,Natural gas,5535.855546,Commercial
+2000,Electricity,5982.029235,Commercial
+2000,Heat,84.41865864,Commercial
+2000,Bioenergy & waste,11.46,Commercial
+2000,Petroleum,616.8907303,Commercial
+2001,Coal,10.45013652,Commercial
+2001,Natural gas,5550.300946,Commercial
+2001,Electricity,6192.089424,Commercial
+2001,Heat,0.106671539,Commercial
+2001,Bioenergy & waste,10.67,Commercial
+2001,Petroleum,1072.725531,Commercial
+2002,Coal,5.029546217,Commercial
+2002,Natural gas,4771.23289,Commercial
+2002,Electricity,6050.158696,Commercial
+2002,Heat,0.048323302,Commercial
+2002,Bioenergy & waste,19.28,Commercial
+2002,Petroleum,499.356041,Commercial
+2003,Coal,5.350065033,Commercial
+2003,Natural gas,5163.161396,Commercial
+2003,Electricity,6130.531078,Commercial
+2003,Heat,20.56616251,Commercial
+2003,Bioenergy & waste,19.28,Commercial
+2003,Petroleum,417.0496765,Commercial
+2004,Coal,4.97761445,Commercial
+2004,Natural gas,5089.078967,Commercial
+2004,Electricity,6450.621808,Commercial
+2004,Heat,5.21050086,Commercial
+2004,Bioenergy & waste,19.69,Commercial
+2004,Petroleum,657.3504348,Commercial
+2005,Coal,5.565093552,Commercial
+2005,Natural gas,5005.217782,Commercial
+2005,Electricity,6779.91738,Commercial
+2005,Heat,9.756799226,Commercial
+2005,Bioenergy & waste,19.69192607,Commercial
+2005,Petroleum,849.2691186,Commercial
+2006,Coal,7.452501094,Commercial
+2006,Natural gas,4543.212389,Commercial
+2006,Electricity,6672.929246,Commercial
+2006,Heat,8.24833491,Commercial
+2006,Bioenergy & waste,19.69192607,Commercial
+2006,Petroleum,733.831076,Commercial
+2007,Coal,5.889432205,Commercial
+2007,Natural gas,4332.282774,Commercial
+2007,Electricity,6679.031034,Commercial
+2007,Heat,7.094024076,Commercial
+2007,Bioenergy & waste,19.69192607,Commercial
+2007,Petroleum,718.9390527,Commercial
+2008,Coal,8.093299744,Commercial
+2008,Natural gas,5600.244887,Commercial
+2008,Electricity,6835.398935,Commercial
+2008,Heat,6.196788478,Commercial
+2008,Bioenergy & waste,13.96297229,Commercial
+2008,Petroleum,643.2247948,Commercial
+2009,Coal,36.3823546,Commercial
+2009,Natural gas,4415.480663,Commercial
+2009,Electricity,6549.971361,Commercial
+2009,Heat,9.18272773,Commercial
+2009,Bioenergy & waste,17.69018542,Commercial
+2009,Petroleum,592.1901159,Commercial
+2010,Coal,6.745701834,Commercial
+2010,Natural gas,4837.143532,Commercial
+2010,Electricity,6730.15009,Commercial
+2010,Heat,9.95200129,Commercial
+2010,Bioenergy & waste,17.18947833,Commercial
+2010,Petroleum,631.436019,Commercial
+2011,Coal,8.901748931,Commercial
+2011,Natural gas,4162.570923,Commercial
+2011,Electricity,6648.357751,Commercial
+2011,Heat,3.158864144,Commercial
+2011,Bioenergy & waste,18.71080598,Commercial
+2011,Petroleum,691.4697671,Commercial
+2012,Coal,7.778131845,Commercial
+2012,Natural gas,4870.34112,Commercial
+2012,Electricity,6698.138577,Commercial
+2012,Heat,6.656706793,Commercial
+2012,Bioenergy & waste,29.58174185,Commercial
+2012,Petroleum,656.2889421,Commercial
+2013,Coal,8.425432973,Commercial
+2013,Natural gas,5050.770737,Commercial
+2013,Electricity,6779.820811,Commercial
+2013,Heat,11.93632846,Commercial
+2013,Bioenergy & waste,53.96126582,Commercial
+2013,Petroleum,650.233091,Commercial
+2014,Coal,8.43505484,Commercial
+2014,Natural gas,4281.849549,Commercial
+2014,Electricity,6436.323432,Commercial
+2014,Heat,6.38327601,Commercial
+2014,Bioenergy & waste,46.66206469,Commercial
+2014,Petroleum,881.5027903,Commercial
+2015,Coal,8.462687277,Commercial
+2015,Natural gas,4630.872995,Commercial
+2015,Electricity,6429.31136,Commercial
+2015,Heat,219.5391892,Commercial
+2015,Bioenergy & waste,993.5350397,Commercial
+2015,Petroleum,1119.03764,Commercial
+2016,Coal,8.462687277,Commercial
+2016,Natural gas,4802.459342,Commercial
+2016,Electricity,6361.514969,Commercial
+2016,Heat,240.6826973,Commercial
+2016,Bioenergy & waste,985.9431308,Commercial
+2016,Petroleum,2029.880885,Commercial
+2017,Coal,8.432517269,Commercial
+2017,Natural gas,4807.779375,Commercial
+2017,Electricity,6280.863557,Commercial
+2017,Heat,215.1722021,Commercial
+2017,Bioenergy & waste,1093.210902,Commercial
+2017,Petroleum,2012.553395,Commercial
+2018,Coal,8.432517269,Commercial
+2018,Natural gas,4783.840398,Commercial
+2018,Electricity,6359.474865,Commercial
+2018,Heat,220.8044556,Commercial
+2018,Bioenergy & waste,1144.072848,Commercial
+2018,Petroleum,2058.443876,Commercial
+2019,Coal,8.432517269,Commercial
+2019,Natural gas,4933.401134,Commercial
+2019,Electricity,6209.271392,Commercial
+2019,Heat,221.2046031,Commercial
+2019,Bioenergy & waste,1180.431951,Commercial
+2019,Petroleum,2002.73889,Commercial
+2020,Coal,8.432517269,Commercial
+2020,Natural gas,4617.359687,Commercial
+2020,Electricity,5443.000656,Commercial
+2020,Heat,221.1338592,Commercial
+2020,Bioenergy & waste,1272.288116,Commercial
+2020,Petroleum,1913.803419,Commercial
+2000,Coal,1448.297074,Domestic
+2000,Manufactured fuel,94.66418267,Domestic
+2000,Manufactured fuel,365.2535588,Domestic
+2000,Natural gas,31806.44884,Domestic
+2000,Electricity,9616.680997,Domestic
+2000,Heat,44.41496131,Domestic
+2000,Bioenergy & waste,236.025,Domestic
+2000,Petroleum,3239.391701,Domestic
+2001,Coal,1461.187814,Domestic
+2001,Manufactured fuel,47.68797172,Domestic
+2001,Manufactured fuel,328.2705169,Domestic
+2001,Natural gas,32624.76354,Domestic
+2001,Electricity,9917.196905,Domestic
+2001,Heat,31.87748745,Domestic
+2001,Bioenergy & waste,240.44,Domestic
+2001,Petroleum,3526.904628,Domestic
+2002,Coal,1009.079512,Domestic
+2002,Manufactured fuel,126.7329676,Domestic
+2002,Manufactured fuel,289.2610761,Domestic
+2002,Natural gas,32362.16188,Domestic
+2002,Electricity,10319.38151,Domestic
+2002,Heat,33.1900258,Domestic
+2002,Bioenergy & waste,243.349,Domestic
+2002,Petroleum,3087.455222,Domestic
+2003,Coal,812.7343897,Domestic
+2003,Manufactured fuel,91.53699804,Domestic
+2003,Manufactured fuel,254.6771431,Domestic
+2003,Natural gas,33231.83863,Domestic
+2003,Electricity,10576.16133,Domestic
+2003,Heat,10.83404987,Domestic
+2003,Bioenergy & waste,247.06,Domestic
+2003,Petroleum,3068.183567,Domestic
+2004,Coal,732.8877666,Domestic
+2004,Manufactured fuel,36.14488076,Domestic
+2004,Manufactured fuel,230.360757,Domestic
+2004,Natural gas,34085.18541,Domestic
+2004,Electricity,10679.31808,Domestic
+2004,Heat,51.93465176,Domestic
+2004,Bioenergy & waste,251.65,Domestic
+2004,Petroleum,3265.327187,Domestic
+2005,Coal,473.7824207,Domestic
+2005,Manufactured fuel,24.48334532,Domestic
+2005,Manufactured fuel,198.9816315,Domestic
+2005,Natural gas,32835.68115,Domestic
+2005,Electricity,10809.21221,Domestic
+2005,Heat,51.93465176,Domestic
+2005,Bioenergy & waste,317.8009621,Domestic
+2005,Petroleum,3093.545541,Domestic
+2006,Coal,426.0315781,Domestic
+2006,Manufactured fuel,15.89646508,Domestic
+2006,Manufactured fuel,199.863482,Domestic
+2006,Natural gas,31550.13063,Domestic
+2006,Electricity,10722.60698,Domestic
+2006,Heat,51.93465176,Domestic
+2006,Bioenergy & waste,357.9095417,Domestic
+2006,Petroleum,3250.773521,Domestic
+2007,Coal,487.0954842,Domestic
+2007,Manufactured fuel,10.5853062,Domestic
+2007,Manufactured fuel,182.4418594,Domestic
+2007,Natural gas,30341.17886,Domestic
+2007,Electricity,10582.63337,Domestic
+2007,Heat,51.93465176,Domestic
+2007,Bioenergy & waste,399.7291213,Domestic
+2007,Petroleum,2876.825462,Domestic
+2008,Coal,514.7222782,Domestic
+2008,Manufactured fuel,8.794960237,Domestic
+2008,Manufactured fuel,229.1639105,Domestic
+2008,Natural gas,30916.06344,Domestic
+2008,Electricity,10300.94583,Domestic
+2008,Heat,51.93465176,Domestic
+2008,Bioenergy & waste,313.0889394,Domestic
+2008,Petroleum,3033.460387,Domestic
+2009,Coal,514.2394259,Domestic
+2009,Manufactured fuel,7.331135951,Domestic
+2009,Manufactured fuel,191.779256,Domestic
+2009,Natural gas,29681.79604,Domestic
+2009,Electricity,10192.67355,Domestic
+2009,Heat,51.93465176,Domestic
+2009,Bioenergy & waste,344.0864944,Domestic
+2009,Petroleum,3013.13511,Domestic
+2010,Coal,536.7367457,Domestic
+2010,Manufactured fuel,7.331135951,Domestic
+2010,Manufactured fuel,221.2617665,Domestic
+2010,Natural gas,33499.18304,Domestic
+2010,Electricity,10217.70874,Domestic
+2010,Heat,51.93465176,Domestic
+2010,Bioenergy & waste,464.9565909,Domestic
+2010,Petroleum,3427.744137,Domestic
+2011,Coal,530.097559,Domestic
+2011,Manufactured fuel,6.192318716,Domestic
+2011,Manufactured fuel,191.8441841,Domestic
+2011,Natural gas,26555.52461,Domestic
+2011,Electricity,9594.704868,Domestic
+2011,Heat,51.93465176,Domestic
+2011,Bioenergy & waste,436.7398916,Domestic
+2011,Petroleum,2669.016943,Domestic
+2012,Coal,506.346237,Domestic
+2012,Manufactured fuel,4.982325404,Domestic
+2012,Manufactured fuel,179.8091145,Domestic
+2012,Natural gas,29508.17837,Domestic
+2012,Electricity,9859.211129,Domestic
+2012,Heat,51.93465176,Domestic
+2012,Bioenergy & waste,529.102944,Domestic
+2012,Petroleum,2706.904901,Domestic
+2013,Coal,486.0050396,Domestic
+2013,Manufactured fuel,4.0570364,Domestic
+2013,Manufactured fuel,216.4773351,Domestic
+2013,Natural gas,29621.75079,Domestic
+2013,Electricity,9751.717315,Domestic
+2013,Heat,51.93465176,Domestic
+2013,Bioenergy & waste,620.5140743,Domestic
+2013,Petroleum,2844.584129,Domestic
+2014,Coal,414.9822244,Domestic
+2014,Manufactured fuel,4.128212477,Domestic
+2014,Manufactured fuel,177.8188897,Domestic
+2014,Natural gas,24393.03445,Domestic
+2014,Electricity,9292.871861,Domestic
+2014,Heat,51.93465176,Domestic
+2014,Bioenergy & waste,602.1505602,Domestic
+2014,Petroleum,2507.908106,Domestic
+2015,Coal,417.7994416,Domestic
+2015,Manufactured fuel,1.850578007,Domestic
+2015,Manufactured fuel,165.1142091,Domestic
+2015,Natural gas,25587.41545,Domestic
+2015,Electricity,9266.023025,Domestic
+2015,Heat,260.4420353,Domestic
+2015,Bioenergy & waste,689.7231513,Domestic
+2015,Petroleum,2518.079804,Domestic
+2016,Coal,400.94533,Domestic
+2016,Manufactured fuel,3.37E-15,Domestic
+2016,Manufactured fuel,167.6224725,Domestic
+2016,Natural gas,26300.512,Domestic
+2016,Electricity,9288.481804,Domestic
+2016,Heat,260.4420353,Domestic
+2016,Bioenergy & waste,751.799111,Domestic
+2016,Petroleum,2542.806212,Domestic
+2017,Coal,370.5303801,Domestic
+2017,Manufactured fuel,172.4053071,Domestic
+2017,Natural gas,25372.01402,Domestic
+2017,Electricity,9060.008662,Domestic
+2017,Heat,268.564264,Domestic
+2017,Bioenergy & waste,786.0107208,Domestic
+2017,Petroleum,2416.059671,Domestic
+2018,Coal,358.4858239,Domestic
+2018,Manufactured fuel,-3.37E-15,Domestic
+2018,Manufactured fuel,170.8666525,Domestic
+2018,Natural gas,26248.52347,Domestic
+2018,Electricity,9033.924916,Domestic
+2018,Heat,269.8595812,Domestic
+2018,Bioenergy & waste,885.202594,Domestic
+2018,Petroleum,2540.418699,Domestic
+2019,Coal,336.9536926,Domestic
+2019,Manufactured fuel,142.0228931,Domestic
+2019,Natural gas,25354.87254,Domestic
+2019,Electricity,8927.331452,Domestic
+2019,Heat,269.4954032,Domestic
+2019,Bioenergy & waste,957.0459576,Domestic
+2019,Petroleum,2407.294775,Domestic
+2020,Coal,320.3539771,Domestic
+2020,Manufactured fuel,140.8486779,Domestic
+2020,Natural gas,25735.21856,Domestic
+2020,Electricity,9273.164705,Domestic
+2020,Heat,269.4624074,Domestic
+2020,Bioenergy & waste,987.235125,Domestic
+2020,Petroleum,2549.602519,Domestic
+2000,Coal,1227.743506,Industry
+2000,Manufactured fuel,753.4489347,Industry
+2000,Manufactured fuel,224.9438712,Industry
+2000,Manufactured fuel,216.2510748,Industry
+2000,Natural gas,15773.08684,Industry
+2000,Electricity,9811.951849,Industry
+2000,Heat,1099.415907,Industry
+2000,Bioenergy & waste,264.06,Industry
+2000,Petroleum,6039.473433,Industry
+2001,Coal,1194.955108,Industry
+2001,Manufactured fuel,718.5917646,Industry
+2001,Manufactured fuel,210.29304,Industry
+2001,Manufactured fuel,154.2562339,Industry
+2001,Natural gas,15463.71453,Industry
+2001,Electricity,9573.344798,Industry
+2001,Heat,1001.227128,Industry
+2001,Bioenergy & waste,243.07,Industry
+2001,Petroleum,6611.045663,Industry
+2002,Coal,1185.683049,Industry
+2002,Manufactured fuel,610.4147006,Industry
+2002,Manufactured fuel,169.9778065,Industry
+2002,Manufactured fuel,78.18235629,Industry
+2002,Natural gas,14201.69142,Industry
+2002,Electricity,9472.720828,Industry
+2002,Heat,1320.641617,Industry
+2002,Bioenergy & waste,250.03,Industry
+2002,Petroleum,6248.260687,Industry
+2003,Coal,1247.966029,Industry
+2003,Manufactured fuel,588.6011583,Industry
+2003,Manufactured fuel,165.5705612,Industry
+2003,Manufactured fuel,53.1894395,Industry
+2003,Natural gas,14292.02486,Industry
+2003,Electricity,9396.249143,Industry
+2003,Heat,1128.312471,Industry
+2003,Bioenergy & waste,266.69,Industry
+2003,Petroleum,6899.217664,Industry
+2004,Coal,1235.252013,Industry
+2004,Manufactured fuel,559.2062944,Industry
+2004,Manufactured fuel,180.1646022,Industry
+2004,Manufactured fuel,67.49939269,Industry
+2004,Natural gas,13237.60039,Industry
+2004,Electricity,9584.469053,Industry
+2004,Heat,832.3404162,Industry
+2004,Bioenergy & waste,265.24,Industry
+2004,Petroleum,6918.419749,Industry
+2005,Coal,1179.924431,Industry
+2005,Manufactured fuel,534.7364359,Industry
+2005,Manufactured fuel,170.6952551,Industry
+2005,Manufactured fuel,78.51582418,Industry
+2005,Natural gas,13021.58249,Industry
+2005,Electricity,9976.274514,Industry
+2005,Heat,830.5075379,Industry
+2005,Bioenergy & waste,200.7608564,Industry
+2005,Petroleum,6282.184724,Industry
+2006,Coal,1163.648436,Industry
+2006,Manufactured fuel,487.6187446,Industry
+2006,Manufactured fuel,177.7902996,Industry
+2006,Manufactured fuel,106.2372576,Industry
+2006,Natural gas,12428.28643,Industry
+2006,Electricity,9879.30335,Industry
+2006,Heat,808.9329278,Industry
+2006,Bioenergy & waste,213.4894665,Industry
+2006,Petroleum,6099.351763,Industry
+2007,Coal,1268.405292,Industry
+2007,Manufactured fuel,513.0506114,Industry
+2007,Manufactured fuel,177.0292127,Industry
+2007,Manufactured fuel,101.2789069,Industry
+2007,Natural gas,11466.07565,Industry
+2007,Electricity,9699.010541,Industry
+2007,Heat,895.8440378,Industry
+2007,Bioenergy & waste,276.3306472,Industry
+2007,Petroleum,6095.347115,Industry
+2008,Coal,1296.161475,Industry
+2008,Manufactured fuel,442.7704421,Industry
+2008,Manufactured fuel,173.9185261,Industry
+2008,Manufactured fuel,92.10906796,Industry
+2008,Natural gas,11029.70744,Industry
+2008,Electricity,9815.211275,Industry
+2008,Heat,1020.703147,Industry
+2008,Bioenergy & waste,414.2445386,Industry
+2008,Petroleum,5895.148581,Industry
+2009,Coal,1151.758472,Industry
+2009,Manufactured fuel,387.271334,Industry
+2009,Manufactured fuel,19.74054837,Industry
+2009,Manufactured fuel,48.51238265,Industry
+2009,Natural gas,9145.624057,Industry
+2009,Electricity,8575.923003,Industry
+2009,Heat,762.8354635,Industry
+2009,Bioenergy & waste,415.0256574,Industry
+2009,Petroleum,5151.59137,Industry
+2010,Coal,1311.218616,Industry
+2010,Manufactured fuel,338.7894643,Industry
+2010,Manufactured fuel,17.02499904,Industry
+2010,Manufactured fuel,96.58446293,Industry
+2010,Natural gas,9395.425209,Industry
+2010,Electricity,8988.608537,Industry
+2010,Heat,822.1495906,Industry
+2010,Bioenergy & waste,471.8981672,Industry
+2010,Petroleum,5482.239835,Industry
+2011,Coal,1193.615431,Industry
+2011,Manufactured fuel,306.2765983,Industry
+2011,Manufactured fuel,17.17411673,Industry
+2011,Manufactured fuel,59.45510193,Industry
+2011,Natural gas,9007.305152,Industry
+2011,Electricity,8806.147477,Industry
+2011,Heat,769.3515185,Industry
+2011,Bioenergy & waste,530.87703,Industry
+2011,Petroleum,4499.960761,Industry
+2012,Coal,1212.403294,Industry
+2012,Manufactured fuel,375.184782,Industry
+2012,Manufactured fuel,17.00031727,Industry
+2012,Manufactured fuel,43.30489425,Industry
+2012,Natural gas,8821.482566,Industry
+2012,Electricity,8465.674956,Industry
+2012,Heat,757.9172829,Industry
+2012,Bioenergy & waste,488.2619511,Industry
+2012,Petroleum,4668.652349,Industry
+2013,Coal,1555.199305,Industry
+2013,Manufactured fuel,504.4599184,Industry
+2013,Manufactured fuel,14.93743117,Industry
+2013,Manufactured fuel,61.57372107,Industry
+2013,Natural gas,9029.652966,Industry
+2013,Electricity,8338.848004,Industry
+2013,Heat,739.4579536,Industry
+2013,Bioenergy & waste,576.9399647,Industry
+2013,Petroleum,4055.655041,Industry
+2014,Coal,1626.986052,Industry
+2014,Manufactured fuel,482.7075127,Industry
+2014,Manufactured fuel,14.14825953,Industry
+2014,Manufactured fuel,54.98108084,Industry
+2014,Natural gas,8653.146699,Industry
+2014,Electricity,7996.982346,Industry
+2014,Heat,626.8149613,Industry
+2014,Bioenergy & waste,594.1050708,Industry
+2014,Petroleum,4238.277996,Industry
+2015,Coal,1380.17473,Industry
+2015,Manufactured fuel,395.4520073,Industry
+2015,Manufactured fuel,88.25349452,Industry
+2015,Natural gas,8418.036167,Industry
+2015,Electricity,7991.261162,Industry
+2015,Heat,678.4062182,Industry
+2015,Bioenergy & waste,1115.421924,Industry
+2015,Petroleum,4211.904721,Industry
+2016,Coal,1304.192289,Industry
+2016,Manufactured fuel,224.8402862,Industry
+2016,Manufactured fuel,66.6042707,Industry
+2016,Natural gas,8646.698191,Industry
+2016,Electricity,8023.734174,Industry
+2016,Heat,666.9620221,Industry
+2016,Bioenergy & waste,1194.136495,Industry
+2016,Petroleum,2330.526025,Industry
+2017,Coal,1124.849875,Industry
+2017,Manufactured fuel,210.3337984,Industry
+2017,Manufactured fuel,65.00632828,Industry
+2017,Natural gas,8862.086079,Industry
+2017,Electricity,7937.090031,Industry
+2017,Heat,709.0775194,Industry
+2017,Bioenergy & waste,1232.858131,Industry
+2017,Petroleum,2645.009476,Industry
+2018,Coal,1105.034163,Industry
+2018,Manufactured fuel,192.9227572,Industry
+2018,Manufactured fuel,63.48658865,Industry
+2018,Natural gas,8949.827387,Industry
+2018,Electricity,8071.479944,Industry
+2018,Heat,704.8813609,Industry
+2018,Bioenergy & waste,1432.497144,Industry
+2018,Petroleum,2589.135292,Industry
+2019,Coal,933.6051765,Industry
+2019,Manufactured fuel,198.4360562,Industry
+2019,Manufactured fuel,68.72149691,Industry
+2019,Natural gas,8856.66887,Industry
+2019,Electricity,7929.144929,Industry
+2019,Heat,682.7825989,Industry
+2019,Bioenergy & waste,1491.348476,Industry
+2019,Petroleum,2195.332152,Industry
+2020,Coal,837.0605364,Industry
+2020,Manufactured fuel,207.7373459,Industry
+2020,Manufactured fuel,85.93819996,Industry
+2020,Natural gas,8126.182317,Industry
+2020,Electricity,7195.168505,Industry
+2020,Heat,681.7574536,Industry
+2020,Bioenergy & waste,1676.286989,Industry
+2020,Petroleum,2166.407698,Industry
