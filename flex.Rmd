@@ -47,15 +47,18 @@ require(rappdirs)
 
 ```{r load_data, include=FALSE}
 # Load datasets from folders
-d1 <- read.csv("CONSUMPTION DATA.csv", header = TRUE, sep = ",") #%>% 
-  # mutate("Year" = as.numeric(`ï..Year`)) %>%
-  # select(-'ï..Year')
+d1 <- read.csv("CONSUMPTION DATA.csv", header = TRUE, sep = ",")
+print(names(d1))
+int1 <- read.csv("INTENSITY DATA.csv", header = TRUE, sep = ",")
+print(names(int1))
 
-
-int1 <- read.csv("INTENSITY DATA.csv", header = TRUE, sep = ",") #%>% 
-  # mutate("Year" = as.numeric(`ï..Year`)) %>%
-  # select(-'ï..Year')
-
+#Windows produces slightly garbled header names so cleaning is here
+if (Sys.info()['sysname'] == "Windows") {
+d1 <- dplyr::mutate(d1, "Year" = as.numeric(`ï..Year`)) %>%
+dplyr::select(-'ï..Year')
+int1 <- dplyr::mutate(int1, "Year" = as.numeric(`ï..Year`)) %>%
+  dplyr::select(-'ï..Year')
+}
 ```
 
 ```{r setup2, include = FALSE}
