@@ -8,10 +8,6 @@ The statistics presented in this dashboard are sector energy consumption by fuel
 
 The tool allows users to explore trends in energy consumption and intensity since 2000 and to download filtered datasets for their own use.
 
-## Ingestion
-
-Data ingestion is manual read in of .csv files which are intensity data and consumption by sector. The code in `Data Shaper.R` takes in small .csv files for each sector and creates a two data frame for which are then exported into .csv. These two .csv files are then read into the dashboard when it's run.
-
 ## Consumption by fuel
 
 There are two tabs in which the data is filtered, the "By Fuel" and "By Sector". The datasets are filtered independently on each tab and the controls in the side panel are different on each of the two tabs.
