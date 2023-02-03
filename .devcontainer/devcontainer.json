@@ -1,0 +1,7 @@
+{
+	"name": "Shiny",
+	"build": {
+		"dockerfile": "dockerfile",
+		"context": ".."
+        }
+}
