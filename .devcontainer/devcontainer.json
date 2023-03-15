@@ -1,0 +1,13 @@
+{
+	"name": "Shiny",
+	"build": {
+		"dockerfile": "dockerfile",
+		"context": ".."
+        },
+	"customizations": {
+		"vscode" : {"extensions" : ["REditorSupport.r"]}
+	}
+}
+
+
+

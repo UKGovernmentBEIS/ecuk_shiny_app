@@ -1,0 +1,8 @@
+FROM rocker/shiny:4.0.5
+RUN apt-get update && \
+    apt-get upgrade -y && \
+    apt-get install -y git
+RUN apt-get install g++ gcc libxml2 libxslt-dev -y
+RUN install2.r languageserver flexdashboard shiny dygraphs \
+                shinydashboard plotly httr readr scales \
+                tidyverse dplyr tidyr DT readr stringi rappdirs

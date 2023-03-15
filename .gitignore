@@ -8,3 +8,4 @@ Deploy Code/
 *.docx
 *.xlsx
 Importer/
+./html_outputs
