@@ -30,5 +30,7 @@ The data download with produce a .csv of the time series used to produce the plo
 
 The colour schemes were inherited from the 2019 version of the ECUK dashboard and are consistent with the spreadsheet publications of ECUK.
 
+## Running the app
 
+If you want to run the app from an editor other than RStudio, e.g VSCode, Codepace, you should run `rmarkdown::run` from an R prompt. Using the UI to knit will run `rmarkdown::knit` which does not work with the shiny runtime used for this dashboard.
 

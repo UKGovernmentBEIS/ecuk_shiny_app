@@ -5,9 +5,12 @@ output:
     logo: logo.jpg
     css: styles.css
     orientation: rows
+params:
+  output_dir: "./output_html"
 runtime: shiny
 ---
-
+<!-- knit: (function(inputFile, encoding) { -->
+  <!-- rmarkdown::render(inputFile, encoding = encoding, output_dir = "pdf") }) -->
 <style>                     
 .navbar {
   background-color:white;
@@ -34,7 +37,6 @@ library(plotly)
 library(httr)
 library(readr)
 library(scales)
-# library(plyr)
 library(tidyverse)
 library(dplyr)
 library(tidyr)
@@ -42,6 +44,10 @@ library(DT)
 library(readr)
 library(stringi)
 require(rappdirs)
+
+# Set data/output directories
+output_dir <- "./html_output"
+
 ```
 
 
