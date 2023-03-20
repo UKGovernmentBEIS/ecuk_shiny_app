@@ -9,8 +9,7 @@ params:
   output_dir: "./output_html"
 runtime: shiny
 ---
-<!-- knit: (function(inputFile, encoding) { -->
-  <!-- rmarkdown::render(inputFile, encoding = encoding, output_dir = "pdf") }) -->
+
 <style>                     
 .navbar {
   background-color:white;
